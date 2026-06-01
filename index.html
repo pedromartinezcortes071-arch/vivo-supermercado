@@ -50,6 +50,24 @@
     .animate-soft-blink {
       animation: soft-blink 2s ease-in-out infinite;
     }
+    .offer-empty img { display: none; }
+    .offer-empty .aspect-square,
+    .offer-empty .aspect-\[4\/3\] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a8a29e;
+      font-size: 0.875rem;
+      text-align: center;
+      padding: 1rem;
+    }
+    .offer-empty .aspect-square::after,
+    .offer-empty .aspect-\[4\/3\]::after {
+      content: "Imagen pendiente";
+    }
+    .tienda-img--charcuteria {
+      object-position: center 38%;
+    }
   </style>
 </head>
 <body class="bg-[#f5f5f4] text-stone-800 antialiased min-h-screen">
@@ -60,7 +78,7 @@
         <a href="#" class="block">
           <img src="logo.png" alt="Supermercado Vivó" class="h-12 w-40 max-h-12 object-contain mx-auto">
         </a>
-        <p class="text-blue-900 text-2xl sm:text-3xl font-bold mt-3 tracking-tight">Tu confianza desde 1982</p>
+        <p class="text-blue-900 text-xl sm:text-2xl font-bold mt-3 tracking-tight max-w-xl">Tu pequeña gran tienda de barrio en Canteras</p>
       </div>
     </div>
   </header>
@@ -69,16 +87,16 @@
     <!-- Hero (banner estilo premium: imagen full-width, texto centrado, CTA claro) -->
     <section class="relative w-full min-h-[min(78vh,640px)] sm:min-h-[520px] flex items-center justify-center overflow-hidden" aria-labelledby="hero-title">
       <img
-        src="https://images.unsplash.com/photo-1542838132-29c3c296dd33?auto=format&fit=crop&w=1920&q=85"
-        alt=""
-        class="absolute inset-0 w-full h-full object-cover object-center scale-105"
+        src="imagen-fruta-vivo.jpeg"
+        alt="Fruta y verdura fresca en Supermercado Vivó"
+        class="absolute inset-0 w-full h-full object-cover object-[center_82%]"
         loading="eager"
         decoding="async"
       >
       <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/55"></div>
       <div class="relative z-10 w-full max-w-4xl mx-auto px-6 sm:px-8 py-16 sm:py-24 text-center">
         <h1 id="hero-title" class="text-white text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight drop-shadow-sm">
-          Frescura y cercanía en Canteras
+          Tu pequeña gran tienda de barrio en Canteras
         </h1>
         <p class="mt-5 sm:mt-6 text-white/95 text-base sm:text-lg md:text-xl font-normal max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
           Productos de calidad para tu día a día. Haz tu pedido por teléfono y te lo preparamos.
@@ -92,42 +110,168 @@
       </div>
     </section>
 
-    <!-- Nuestros productos (bento) -->
-    <section>
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
-        <h2 class="text-center text-stone-900 text-xl sm:text-2xl font-bold tracking-[0.2em] uppercase mb-4">Nuestros productos</h2>
-        <p class="text-center text-stone-500 text-sm sm:text-base max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed">
-          Queremos lo mejor para ti, por eso exigimos la mejor calidad en nuestros productos para que te lleves a casa un producto diez.
+    <!-- Aparcamiento -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <div class="bg-white rounded-xl border border-stone-200 shadow-sm px-6 sm:px-8 py-5 sm:py-6 flex items-center gap-4 sm:gap-5">
+        <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-900/10 flex items-center justify-center" aria-hidden="true">
+          <i class="fa-solid fa-square-parking text-blue-900 text-xl sm:text-2xl"></i>
+        </div>
+        <p class="text-stone-700 text-sm sm:text-base leading-relaxed">
+          <strong class="text-stone-900 font-semibold">Aparcamiento gratuito y fácil</strong> muy cerca de la tienda. Ven con tu coche y compra con comodidad.
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:auto-rows-[minmax(160px,1fr)]">
-          <!-- Fruta y Verdura: columna izquierda, dos filas -->
-          <article class="relative overflow-hidden rounded-2xl min-h-[260px] md:min-h-0 md:row-span-2 shadow-md group">
-            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80" alt="Fruta y verdura fresca" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
-            <div class="absolute inset-0 bg-black/45"></div>
-            <div class="relative z-10 h-full min-h-[260px] md:min-h-full flex flex-col justify-start p-6 sm:p-8">
-              <h3 class="text-white font-semibold text-lg sm:text-xl uppercase tracking-wide max-w-[12rem] leading-tight">Fruta y Verdura Fresca</h3>
-              <p class="mt-3 text-white/90 text-sm max-w-xs leading-relaxed hidden sm:block">Selección diaria de temporada y proximidad.</p>
+      </div>
+    </section>
+
+    <!-- Ofertas mensuales y semanales -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 pb-14 sm:pb-20" aria-labelledby="ofertas-title">
+      <h2 id="ofertas-title" class="sr-only">Ofertas</h2>
+
+      <!-- Oferta mensual -->
+      <div class="mb-14 sm:mb-16">
+        <h3 class="text-center text-stone-900 text-xl sm:text-2xl font-bold tracking-[0.15em] uppercase">Oferta mensual</h3>
+        <p class="text-center text-stone-500 text-sm sm:text-base mt-2 mb-8">
+          Mes: <span id="oferta-mes" class="font-semibold text-stone-700">—</span>
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
+            <div class="aspect-[4/3] bg-stone-100 flex items-center justify-center">
+              <img src="ofertas/mensual-1.jpg" alt="Oferta mensual 1" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('offer-empty')">
             </div>
+          </figure>
+          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
+            <div class="aspect-[4/3] bg-stone-100 flex items-center justify-center">
+              <img src="ofertas/mensual-2.jpg" alt="Oferta mensual 2" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('offer-empty')">
+            </div>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Oferta semanal -->
+      <div>
+        <h3 class="text-center text-stone-900 text-xl sm:text-2xl font-bold tracking-[0.15em] uppercase">Oferta semanal</h3>
+        <p class="text-center text-stone-500 text-sm sm:text-base mt-2 mb-8">
+          Fecha: <span id="oferta-semana" class="font-semibold text-stone-700">—</span>
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-4 sm:mb-5">
+          <article class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
+            <div class="aspect-square bg-stone-100">
+              <img src="ofertas/semanal-1.jpg" alt="Oferta semanal 1" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('article').classList.add('offer-empty')">
+            </div>
+            <p class="px-4 py-3 text-sm text-stone-700 text-center border-t border-stone-100 min-h-[3rem] flex items-center justify-center" data-oferta-text="1">Descripción producto y precio</p>
           </article>
-          <!-- Charcutería: mitad superior derecha -->
-          <article class="relative overflow-hidden rounded-2xl min-h-[200px] md:min-h-0 md:col-span-2 shadow-md group">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Charcutería al corte" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
-            <div class="absolute inset-0 bg-black/45"></div>
-            <div class="relative z-10 h-full min-h-[200px] md:min-h-full flex flex-col justify-start p-6 sm:p-8">
-              <h3 class="text-white font-semibold text-lg sm:text-xl uppercase tracking-wide">Charcutería al Corte</h3>
-              <p class="mt-3 text-white/90 text-sm max-w-md leading-relaxed hidden sm:block">Embutidos y quesos cortados al momento a tu gusto.</p>
+          <article class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
+            <div class="aspect-square bg-stone-100">
+              <img src="ofertas/semanal-2.jpg" alt="Oferta semanal 2" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('article').classList.add('offer-empty')">
             </div>
+            <p class="px-4 py-3 text-sm text-stone-700 text-center border-t border-stone-100 min-h-[3rem] flex items-center justify-center" data-oferta-text="2">Descripción producto y precio</p>
           </article>
-          <!-- Panadería: mitad inferior derecha (ancho) -->
-          <article class="relative overflow-hidden rounded-2xl min-h-[200px] md:min-h-0 md:col-span-2 shadow-md group">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80" alt="Panadería diaria" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
-            <div class="absolute inset-0 bg-black/45"></div>
-            <div class="relative z-10 h-full min-h-[200px] md:min-h-full flex flex-col justify-start p-6 sm:p-8">
-              <h3 class="text-white font-semibold text-lg sm:text-xl uppercase tracking-wide">Panadería Diaria</h3>
-              <p class="mt-3 text-white/90 text-sm max-w-md leading-relaxed hidden sm:block">Pan recién horneado y bollería artesanal cada mañana.</p>
+          <article class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
+            <div class="aspect-square bg-stone-100">
+              <img src="ofertas/semanal-3.jpg" alt="Oferta semanal 3" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('article').classList.add('offer-empty')">
             </div>
+            <p class="px-4 py-3 text-sm text-stone-700 text-center border-t border-stone-100 min-h-[3rem] flex items-center justify-center" data-oferta-text="3">Descripción producto y precio</p>
           </article>
         </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-3xl mx-auto">
+          <article class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
+            <div class="aspect-square bg-stone-100">
+              <img src="ofertas/semanal-4.jpg" alt="Oferta semanal 4" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('article').classList.add('offer-empty')">
+            </div>
+            <p class="px-4 py-3 text-sm text-stone-700 text-center border-t border-stone-100 min-h-[3rem] flex items-center justify-center" data-oferta-text="4">Descripción producto y precio</p>
+          </article>
+          <article class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
+            <div class="aspect-square bg-stone-100">
+              <img src="ofertas/semanal-5.jpg" alt="Oferta semanal 5" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('article').classList.add('offer-empty')">
+            </div>
+            <p class="px-4 py-3 text-sm text-stone-700 text-center border-t border-stone-100 min-h-[3rem] flex items-center justify-center" data-oferta-text="5">Descripción producto y precio</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Segmentos de la tienda -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16" aria-labelledby="tienda-segmentos-title">
+      <h2 id="tienda-segmentos-title" class="text-center text-stone-900 text-xl sm:text-2xl font-bold tracking-[0.15em] uppercase mb-10 sm:mb-12">
+        Dentro de la tienda
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+        <!-- Charcutería: franja horizontal -->
+        <article class="relative overflow-hidden rounded-2xl min-h-[220px] sm:min-h-[260px] md:min-h-[300px] md:col-span-2 shadow-md group">
+          <img
+            src="tienda/charcuteria.jpeg"
+            alt="Charcutería al corte en Supermercado Vivó"
+            class="tienda-img--charcuteria absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="absolute inset-0 bg-black/45"></div>
+          <div class="relative z-10 h-full min-h-[220px] sm:min-h-[260px] md:min-h-[300px] flex flex-col justify-start p-6 sm:p-8">
+            <h3 class="text-white font-semibold text-lg sm:text-xl uppercase tracking-wide max-w-xl leading-tight">
+              Charcutería al corte y embutidos
+            </h3>
+            <p class="mt-3 text-white/90 text-sm max-w-md leading-relaxed hidden sm:block">
+              Embutidos y quesos cortados al momento a tu gusto.
+            </p>
+          </div>
+        </article>
+
+        <article class="relative overflow-hidden rounded-2xl min-h-[200px] md:min-h-[240px] shadow-md group">
+          <img
+            src="tienda/yogures-frios.jpeg"
+            alt="Yogures y productos fríos en Supermercado Vivó"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="absolute inset-0 bg-black/45"></div>
+          <div class="relative z-10 h-full min-h-[200px] md:min-h-full flex flex-col justify-start p-6 sm:p-8">
+            <h3 class="text-white font-semibold text-lg sm:text-xl uppercase tracking-wide max-w-md leading-tight">
+              Amplia selección de yogures y productos fríos
+            </h3>
+            <p class="mt-3 text-white/90 text-sm max-w-md leading-relaxed hidden sm:block">
+              Yogures, lácteos y refrigerados para tu día a día.
+            </p>
+          </div>
+        </article>
+
+        <article class="relative overflow-hidden rounded-2xl min-h-[200px] md:min-h-[240px] shadow-md group">
+          <img
+            src="tienda/drogueria.jpeg"
+            alt="Droguería y primeras marcas en Supermercado Vivó"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="absolute inset-0 bg-black/45"></div>
+          <div class="relative z-10 h-full min-h-[200px] md:min-h-full flex flex-col justify-start p-6 sm:p-8">
+            <h3 class="text-white font-semibold text-lg sm:text-xl uppercase tracking-wide max-w-md leading-tight">
+              Primeras marcas de droguería
+            </h3>
+            <p class="mt-3 text-white/90 text-sm max-w-md leading-relaxed hidden sm:block">
+              Limpieza e higiene del hogar con marcas de confianza.
+            </p>
+          </div>
+        </article>
+
+        <article class="relative overflow-hidden rounded-2xl min-h-[200px] md:min-h-[220px] md:col-span-2 shadow-md group">
+          <img
+            src="tienda/vinos.jpeg"
+            alt="Selección de vinos en Supermercado Vivó"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="absolute inset-0 bg-black/45"></div>
+          <div class="relative z-10 h-full min-h-[200px] md:min-h-[220px] flex flex-col justify-start p-6 sm:p-8">
+            <h3 class="text-white font-semibold text-lg sm:text-xl uppercase tracking-wide">
+              Amplia selección de vinos
+            </h3>
+            <p class="mt-3 text-white/90 text-sm max-w-lg leading-relaxed hidden sm:block">
+              Tintos, blancos y rosados para acompañar tus comidas.
+            </p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -239,5 +383,24 @@
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.965-.852-1.089l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a1.125 1.125 0 01-1.21.394 12.035 12.035 0 01-7.159-7.159 1.125 1.125 0 01.394-1.21l1.293-.97a1.125 1.125 0 00.417-1.173L6.96 3.102A1.125 1.125 0 005.871 2.25H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
     <span class="text-white font-medium ml-2">Llama ahora</span>
   </a>
+  <script>
+    (function () {
+      var meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+      var hoy = new Date();
+      var mesEl = document.getElementById("oferta-mes");
+      var semanaEl = document.getElementById("oferta-semana");
+      if (mesEl) {
+        mesEl.textContent = meses[hoy.getMonth()].charAt(0).toUpperCase() + meses[hoy.getMonth()].slice(1) + " " + hoy.getFullYear();
+      }
+      if (semanaEl) {
+        var lunes = new Date(hoy);
+        lunes.setDate(hoy.getDate() - ((hoy.getDay() + 6) % 7));
+        var domingo = new Date(lunes);
+        domingo.setDate(lunes.getDate() + 6);
+        var fmt = function (d) { return d.getDate() + " " + meses[d.getMonth()]; };
+        semanaEl.textContent = fmt(lunes) + " – " + fmt(domingo) + " " + domingo.getFullYear();
+      }
+    })();
+  </script>
 </body>
 </html>
