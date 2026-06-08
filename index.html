@@ -110,8 +110,25 @@
       </div>
     </section>
 
+    <!-- Reparto a domicilio -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-10 pb-4 sm:pb-5">
+      <div class="bg-white rounded-xl border border-stone-200 shadow-sm px-6 sm:px-8 py-5 sm:py-6 flex items-center gap-4 sm:gap-5">
+        <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-rose-700/10 flex items-center justify-center" aria-hidden="true">
+          <i class="fa-solid fa-truck text-rose-700 text-xl sm:text-2xl"></i>
+        </div>
+        <p class="text-stone-700 text-sm sm:text-base leading-relaxed">
+          <strong class="text-stone-900 font-semibold">Reparto a domicilio</strong> en
+          <strong class="text-stone-900 font-semibold">Canteras</strong>,
+          <strong class="text-stone-900 font-semibold">Tentegorra</strong>,
+          <strong class="text-stone-900 font-semibold">La Vaguada</strong> y
+          <strong class="text-stone-900 font-semibold">Galifa</strong>.
+          Llámanos y te llevamos la compra a casa.
+        </p>
+      </div>
+    </section>
+
     <!-- Aparcamiento -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 pb-8 sm:pb-10">
       <div class="bg-white rounded-xl border border-stone-200 shadow-sm px-6 sm:px-8 py-5 sm:py-6 flex items-center gap-4 sm:gap-5">
         <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-900/10 flex items-center justify-center" aria-hidden="true">
           <i class="fa-solid fa-square-parking text-blue-900 text-xl sm:text-2xl"></i>
@@ -133,15 +150,11 @@
           Mes: <span id="oferta-mes" class="font-semibold text-stone-700">—</span>
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
-            <div class="aspect-[4/3] bg-stone-100 flex items-center justify-center">
-              <img src="ofertas/mensual-1.jpg" alt="Oferta mensual 1" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('offer-empty')">
-            </div>
+          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 shadow-md">
+            <img src="ofertas/mensual-1.jpeg" alt="Oferta mensual — folleto junio 2026" class="w-full h-auto block" loading="lazy" decoding="async">
           </figure>
-          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
-            <div class="aspect-[4/3] bg-stone-100 flex items-center justify-center">
-              <img src="ofertas/mensual-2.jpg" alt="Oferta mensual 2" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('offer-empty')">
-            </div>
+          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 shadow-md">
+            <img src="ofertas/mensual-2.jpeg" alt="Oferta mensual — folleto junio 2026" class="w-full h-auto block" loading="lazy" decoding="async">
           </figure>
         </div>
       </div>
@@ -153,38 +166,23 @@
           Fecha: <span id="oferta-semana" class="font-semibold text-stone-700">—</span>
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-4 sm:mb-5">
-          <article class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
-            <div class="aspect-square bg-stone-100">
-              <img src="ofertas/semanal-1.jpg" alt="Oferta semanal 1" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('article').classList.add('offer-empty')">
-            </div>
-            <p class="px-4 py-3 text-sm text-stone-700 text-center border-t border-stone-100 min-h-[3rem] flex items-center justify-center" data-oferta-text="1">Descripción producto y precio</p>
-          </article>
-          <article class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
-            <div class="aspect-square bg-stone-100">
-              <img src="ofertas/semanal-2.jpg" alt="Oferta semanal 2" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('article').classList.add('offer-empty')">
-            </div>
-            <p class="px-4 py-3 text-sm text-stone-700 text-center border-t border-stone-100 min-h-[3rem] flex items-center justify-center" data-oferta-text="2">Descripción producto y precio</p>
-          </article>
-          <article class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
-            <div class="aspect-square bg-stone-100">
-              <img src="ofertas/semanal-3.jpg" alt="Oferta semanal 3" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('article').classList.add('offer-empty')">
-            </div>
-            <p class="px-4 py-3 text-sm text-stone-700 text-center border-t border-stone-100 min-h-[3rem] flex items-center justify-center" data-oferta-text="3">Descripción producto y precio</p>
-          </article>
+          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 shadow-md">
+            <img src="ofertas/semanal-1.jpeg" alt="Oferta semanal — Desodorante AXE 2,19 €" class="w-full h-auto block" loading="lazy" decoding="async">
+          </figure>
+          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 shadow-md">
+            <img src="ofertas/semanal-2.jpeg" alt="Oferta semanal — Estrella Galicia 33 cl 0,69 €" class="w-full h-auto block" loading="lazy" decoding="async">
+          </figure>
+          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 shadow-md">
+            <img src="ofertas/semanal-3.jpeg" alt="Oferta semanal — Estrella Galicia Pack-20 Mini 8,99 €" class="w-full h-auto block" loading="lazy" decoding="async">
+          </figure>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-3xl mx-auto">
-          <article class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
-            <div class="aspect-square bg-stone-100">
-              <img src="ofertas/semanal-4.jpg" alt="Oferta semanal 4" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('article').classList.add('offer-empty')">
-            </div>
-            <p class="px-4 py-3 text-sm text-stone-700 text-center border-t border-stone-100 min-h-[3rem] flex items-center justify-center" data-oferta-text="4">Descripción producto y precio</p>
-          </article>
-          <article class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-md">
-            <div class="aspect-square bg-stone-100">
-              <img src="ofertas/semanal-5.jpg" alt="Oferta semanal 5" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.closest('article').classList.add('offer-empty')">
-            </div>
-            <p class="px-4 py-3 text-sm text-stone-700 text-center border-t border-stone-100 min-h-[3rem] flex items-center justify-center" data-oferta-text="5">Descripción producto y precio</p>
-          </article>
+          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 shadow-md">
+            <img src="ofertas/semanal-4.jpeg" alt="Oferta semanal — Listerine 500 ml 2,99 €" class="w-full h-auto block" loading="lazy" decoding="async">
+          </figure>
+          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 shadow-md">
+            <img src="ofertas/semanal-5.jpeg" alt="Oferta semanal — Cápsulas café Alteza 2,99 €" class="w-full h-auto block" loading="lazy" decoding="async">
+          </figure>
         </div>
       </div>
     </section>
