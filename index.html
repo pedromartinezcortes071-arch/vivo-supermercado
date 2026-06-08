@@ -68,6 +68,20 @@
     .tienda-img--charcuteria {
       object-position: center 38%;
     }
+    .offer-promo-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 9 / 16;
+      width: 100%;
+      background: #fafaf9;
+    }
+    .offer-promo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
   </style>
 </head>
 <body class="bg-[#f5f5f4] text-stone-800 antialiased min-h-screen">
@@ -177,11 +191,11 @@
           </figure>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-3xl mx-auto">
-          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 shadow-md">
-            <img src="ofertas/semanal-4.jpeg" alt="Oferta semanal — Listerine 500 ml 2,99 €" class="w-full h-auto block" loading="lazy" decoding="async">
+          <figure class="offer-promo-card rounded-2xl overflow-hidden border border-stone-200 shadow-md">
+            <img src="ofertas/semanal-4.jpeg" alt="Oferta semanal — Listerine 500 ml 2,99 €" loading="lazy" decoding="async">
           </figure>
-          <figure class="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 shadow-md">
-            <img src="ofertas/semanal-5.jpeg" alt="Oferta semanal — Cápsulas café Alteza 2,99 €" class="w-full h-auto block" loading="lazy" decoding="async">
+          <figure class="offer-promo-card rounded-2xl overflow-hidden border border-stone-200 shadow-md">
+            <img src="ofertas/semanal-5.jpeg" alt="Oferta semanal — Cápsulas café Alteza 2,99 €" loading="lazy" decoding="async">
           </figure>
         </div>
       </div>
