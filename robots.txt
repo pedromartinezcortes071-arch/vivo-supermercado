@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /tailwind.config.js
+Disallow: /tw-input.css
+
+Sitemap: https://supermercadovivo.es/sitemap.xml

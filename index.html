@@ -8,32 +8,21 @@
   <link rel="icon" type="image/png" href="logo.png">
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://supermercadovivo.netlify.app/">
+  <meta property="og:url" content="https://supermercadovivo.es/">
   <meta property="og:title" content="Supermercado Vivó - Canteras">
   <meta property="og:description" content="Tu supermercado de confianza en Canteras. Productos frescos, carnicería, charcutería y pedidos por llamada telefónica.">
-  <meta property="og:image" content="logo.png">
+  <meta property="og:image" content="https://supermercadovivo.es/logo.png">
   <meta property="og:locale" content="es_ES">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Supermercado Vivó - Canteras">
   <meta name="twitter:description" content="Tu supermercado de confianza en Canteras. Productos frescos, carnicería, charcutería y pedidos por llamada telefónica.">
-  <meta name="twitter:image" content="logo.png">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="twitter:image" content="https://supermercadovivo.es/logo.png">
+  <link rel="stylesheet" href="tailwind.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['DM Sans', 'system-ui', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
     body { font-family: 'DM Sans', system-ui, sans-serif; }
     @keyframes call-breathing {
@@ -313,6 +302,7 @@
           <iframe
             src="https://maps.google.com/maps?q=Supermercado%20Viv%C3%B3%20Canteras&t=&z=15&ie=UTF8&iwloc=&output=embed"
             class="absolute inset-0 w-full h-full border-0"
+            sandbox="allow-scripts allow-same-origin"
             allowfullscreen
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -367,9 +357,9 @@
           <p class="text-stone-400 text-sm mt-1">C. Calasparra, 19 · Canteras, Murcia</p>
         </div>
         <nav class="flex flex-wrap gap-x-8 gap-y-2 text-sm" aria-label="Enlaces legales">
-          <a href="#" class="hover:text-white transition-colors">Aviso Legal</a>
-          <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
-          <a href="#" class="hover:text-white transition-colors">Política de Cookies</a>
+          <a href="aviso-legal.html" class="hover:text-white transition-colors">Aviso Legal</a>
+          <a href="privacidad.html" class="hover:text-white transition-colors">Política de Privacidad</a>
+          <a href="cookies.html" class="hover:text-white transition-colors">Política de Cookies</a>
         </nav>
       </div>
       <div class="mt-10 pt-8 border-t border-blue-800 flex items-center justify-center sm:justify-end gap-6">
@@ -395,24 +385,6 @@
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.965-.852-1.089l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a1.125 1.125 0 01-1.21.394 12.035 12.035 0 01-7.159-7.159 1.125 1.125 0 01.394-1.21l1.293-.97a1.125 1.125 0 00.417-1.173L6.96 3.102A1.125 1.125 0 005.871 2.25H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
     <span class="text-white font-medium ml-2">Llama ahora</span>
   </a>
-  <script>
-    (function () {
-      var meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
-      var hoy = new Date();
-      var mesEl = document.getElementById("oferta-mes");
-      var semanaEl = document.getElementById("oferta-semana");
-      if (mesEl) {
-        mesEl.textContent = meses[hoy.getMonth()].charAt(0).toUpperCase() + meses[hoy.getMonth()].slice(1) + " " + hoy.getFullYear();
-      }
-      if (semanaEl) {
-        var lunes = new Date(hoy);
-        lunes.setDate(hoy.getDate() - ((hoy.getDay() + 6) % 7));
-        var domingo = new Date(lunes);
-        domingo.setDate(lunes.getDate() + 6);
-        var fmt = function (d) { return d.getDate() + " " + meses[d.getMonth()]; };
-        semanaEl.textContent = fmt(lunes) + " – " + fmt(domingo) + " " + domingo.getFullYear();
-      }
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
