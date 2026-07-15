@@ -7,8 +7,8 @@
     mesEl.textContent = meses[hoy.getMonth()].charAt(0).toUpperCase() + meses[hoy.getMonth()].slice(1) + " " + hoy.getFullYear();
   }
   if (semanaEl) {
-    var ofertaInicio = new Date(2026, 5, 29);
-    var ofertaFin = new Date(2026, 6, 11);
+    var ofertaInicio = new Date(2026, 6, 15);
+    var ofertaFin = new Date(2026, 6, 25);
     var fmt = function (d) { return d.getDate() + " " + meses[d.getMonth()]; };
     semanaEl.textContent = fmt(ofertaInicio) + " – " + fmt(ofertaFin) + " " + ofertaFin.getFullYear();
   }
