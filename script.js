@@ -8,7 +8,7 @@
   }
   if (semanaEl) {
     var ofertaInicio = new Date(2026, 6, 15);
-    var ofertaFin = new Date(2026, 6, 25);
+    var ofertaFin = new Date(2026, 7, 1);
     var fmt = function (d) { return d.getDate() + " " + meses[d.getMonth()]; };
     semanaEl.textContent = fmt(ofertaInicio) + " – " + fmt(ofertaFin) + " " + ofertaFin.getFullYear();
   }
